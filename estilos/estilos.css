@@ -1,0 +1,41 @@
+
+
+body {
+    background-image: url("./img/mama.jpg");
+    background-repeat: repeat;
+    background-size: 350px;
+
+    /*text-decoration: underline red; */
+}
+h1 {
+    background: linear-gradient(to right, #24d350, #84f865);
+    display: inline-block; /* El truco está aquí */
+    padding: 0 10px;
+}
+
+p {
+    background-color: rgb(255, 127, 127);
+    line-height: 22px;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    display: inline-block; /* El truco está aquí */
+    padding: 0 10px;
+}
+
+.playfair-display {
+  font-family:"Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: bold; 
+  font-style: normal;
+  padding: 10px 10px;
+  p {
+    font-weight: normal; 
+  }
+}
+
+@media (max-width: 480px) {
+
+
+  .video-container {
+    width: 30%;    /* El video debe ocupar todo el ancho del móvil */
+  }
+}

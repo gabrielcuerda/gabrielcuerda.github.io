@@ -39,3 +39,8 @@ p {
     width: 30%;    /* El video debe ocupar todo el ancho del móvil */
   }
 }
+
+.fondo-video {
+  background-color: black;
+  display: inline-block;
+}

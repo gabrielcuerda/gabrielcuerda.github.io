@@ -1,1 +1,1 @@
-Esta es una página que he hecho como regalo del día de la madre
+Esta página tiene como objetivo principal concienciar sobre los riesgos de Internet

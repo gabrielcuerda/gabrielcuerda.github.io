@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recursos · Ciberfamilias</title>
+  <meta name="description" content="Creadores de ciberseguridad en YouTube y plataformas para aprender haciendo: retos, CTF y laboratorios prácticos.">
+  <meta name="theme-color" content="#0b0f14">
+  <script>
+    // Evita el parpadeo de tema antes de pintar
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { /* sin localStorage: queda el tema oscuro */ }
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <svg class="brand__logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3.2 5 5.8v5.4c0 4.3 2.9 7.6 7 9.6 4.1-2 7-5.3 7-9.6V5.8L12 3.2Z"/>
+          <path d="m9.2 12.2 2 2 3.6-4.2"/>
+        </svg>
+        <span class="brand__name">ciber<em>familias</em></span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="index.html">Familias</a>
+        <a class="nav__link is-active" href="recursos.html" aria-current="page">Recursos</a>
+        <a class="nav__link" href="proteccion.html">Protección</a>
+      </nav>
+
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar a tema claro">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.4 8.4 0 1 0 20 14.5Z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero container">
+      <p class="hero__eyebrow">// aprende y practica</p>
+      <h1>Recursos para <span class="accent">seguir creciendo</span></h1>
+      <p class="hero__sub">Creadores que explican el oficio y plataformas donde practicar con retos
+        reales. Filtra por tipo o busca por nombre, tema o idioma.</p>
+    </section>
+
+    <!-- Controles -->
+    <section class="container" aria-labelledby="explore-title">
+      <h2 id="explore-title" class="sr-only">Explora los recursos</h2>
+
+      <div class="controls">
+        <div class="chips" role="group" aria-label="Filtrar por tipo de recurso">
+          <button class="chip is-active" type="button" data-filter="todas" aria-pressed="true">Todos</button>
+          <button class="chip" type="button" data-filter="creador" aria-pressed="false">Creadores</button>
+          <button class="chip" type="button" data-filter="practica" aria-pressed="false">Aprender haciendo</button>
+          <button class="chip" type="button" data-filter="revista" aria-pressed="false">Revistas</button>
+        </div>
+
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"/>
+            <path d="m15.8 15.8 4.2 4.2"/>
+          </svg>
+          <label class="sr-only" for="search">Buscar recurso o tema</label>
+          <input id="search" type="search" placeholder="Buscar recurso o tema…" autocomplete="off">
+        </div>
+      </div>
+
+      <p class="counter" id="counter" data-noun="recursos" aria-live="polite">Mostrando <strong>26</strong> de 26 recursos</p>
+    </section>
+
+    <!-- Sección · Creadores -->
+    <section class="container card-section" aria-labelledby="creadores-title">
+      <h2 class="section-title" id="creadores-title">Creadores de contenido
+        <span class="section-title__count">10 canales</span>
+      </h2>
+
+      <div class="grid">
+
+        <!-- 1 · ES -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="3.5"/>
+                <path d="m10.4 9.4 4.6 2.6-4.6 2.6Z"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · ES</span>
+          </div>
+          <h3 class="card__title">S4vitar</h3>
+          <p class="card__desc">Resuelve máquinas de Hack The Box y CTF explicando el razonamiento de
+            cada paso. Referente indiscutible del hacking ético en español.</p>
+          <ul class="card__tags">
+            <li>Pentesting</li>
+            <li>HTB</li>
+            <li>CTF</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/s4vitar" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 2 · ES -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="3.5"/>
+                <path d="m10.4 9.4 4.6 2.6-4.6 2.6Z"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · ES</span>
+          </div>
+          <h3 class="card__title">Securiters</h3>
+          <p class="card__desc">Series completas con formato de curso: desde Linux para seguridad hasta
+            el análisis de vulnerabilidades web con OWASP Top 10.</p>
+          <ul class="card__tags">
+            <li>Series</li>
+            <li>OWASP</li>
+            <li>Linux</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/@securiters" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 3 · ES -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="3.5"/>
+                <path d="m10.4 9.4 4.6 2.6-4.6 2.6Z"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · ES</span>
+          </div>
+          <h3 class="card__title">Nate Gentile</h3>
+          <p class="card__desc">Tecnología con producción cuidada: montaje de laboratorios, Kali Linux y
+            conceptos de redes y seguridad para ir empezando.</p>
+          <ul class="card__tags">
+            <li>Homelab</li>
+            <li>Kali</li>
+            <li>Redes</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/@NateGentile7" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 4 · ES -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="3.5"/>
+                <path d="m10.4 9.4 4.6 2.6-4.6 2.6Z"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · ES</span>
+          </div>
+          <h3 class="card__title">RootedCON</h3>
+          <p class="card__desc">Las ponencias completas de la conferencia de seguridad más importante
+            de España, con investigadores de primer nivel.</p>
+          <ul class="card__tags">
+            <li>Conferencia</li>
+            <li>Malware</li>
+            <li>Investigación</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/@RootedCON" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 5 · ES -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3.2 5 5.8v5.4c0 4.3 2.9 7.6 7 9.6 4.1-2 7-5.3 7-9.6V5.8L12 3.2Z"/>
+                <path d="m9.2 12.2 2 2 3.6-4.2"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · ES</span>
+          </div>
+          <h3 class="card__title">INCIBE</h3>
+          <p class="card__desc">Canal oficial del Instituto Nacional de Ciberseguridad: webinars,
+            concienciación y material técnico gratuito para empresas y ciudadanía.</p>
+          <ul class="card__tags">
+            <li>Oficial</li>
+            <li>Webinars</li>
+            <li>Concienciación</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/@INCIBE" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 6 · EN -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="3.5"/>
+                <path d="m10.4 9.4 4.6 2.6-4.6 2.6Z"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · EN</span>
+          </div>
+          <h3 class="card__title">John Hammond</h3>
+          <p class="card__desc">Análisis de malware en directo, CTF y writeups. Uno de los canales de
+            seguridad más grandes del mundo, con comunidad hispana activa.</p>
+          <ul class="card__tags">
+            <li>Malware</li>
+            <li>CTF</li>
+            <li>Forense</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/@_JohnHammond" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 7 · EN -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="3.5"/>
+                <path d="m10.4 9.4 4.6 2.6-4.6 2.6Z"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · EN</span>
+          </div>
+          <h3 class="card__title">IppSec</h3>
+          <p class="card__desc">Resoluciones de casi todas las máquinas de Hack The Box explicadas con
+            detalle; el compañero ideal mientras practicas.</p>
+          <ul class="card__tags">
+            <li>HTB</li>
+            <li>Walkthroughs</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/@ippsec" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 8 · EN -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="3.5"/>
+                <path d="m10.4 9.4 4.6 2.6-4.6 2.6Z"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · EN</span>
+          </div>
+          <h3 class="card__title">LiveOverflow</h3>
+          <p class="card__desc">Profundiza en la lógica de las vulnerabilidades web y en el bug bounty
+            con explicaciones de primer nivel, sin adornos.</p>
+          <ul class="card__tags">
+            <li>Web</li>
+            <li>Bug Bounty</li>
+            <li>Fundamentos</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/@LiveOverflow" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 9 · EN -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="3.5"/>
+                <path d="m10.4 9.4 4.6 2.6-4.6 2.6Z"/>
+              </svg>
+            </span>
+            <span class="card__cat">YouTube · EN</span>
+          </div>
+          <h3 class="card__title">NahamSec</h3>
+          <p class="card__desc">Bug bounty en la práctica: reconocimiento, informes y ataques de lógica
+            de negocio en aplicaciones reales.</p>
+          <ul class="card__tags">
+            <li>Bug Bounty</li>
+            <li>Web</li>
+            <li>Reconocimiento</li>
+          </ul>
+          <a class="card__link" href="https://www.youtube.com/@NahamSec" target="_blank" rel="noopener noreferrer">
+            Ver canal <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 10 · EN -->
+        <article class="card" data-type="creador">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="3" width="6" height="10" rx="3"/>
+                <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6"/>
+              </svg>
+            </span>
+            <span class="card__cat">Podcast · EN</span>
+          </div>
+          <h3 class="card__title">Darknet Diaries</h3>
+          <p class="card__desc">Historias reales de intrusos, ataques y ciberdelincuencia narradas como
+            relatos. Ideal para escuchar en cualquier momento.</p>
+          <ul class="card__tags">
+            <li>Podcast</li>
+            <li>Historias</li>
+            <li>Incidentes</li>
+          </ul>
+          <a class="card__link" href="https://darknetdiaries.com" target="_blank" rel="noopener noreferrer">
+            Escuchar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Sección · Aprender haciendo -->
+    <section class="container card-section" aria-labelledby="practica-title">
+      <h2 class="section-title" id="practica-title">Aprender haciendo
+        <span class="section-title__count">10 plataformas</span>
+      </h2>
+
+      <div class="grid">
+
+        <!-- 11 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="7.5"/>
+                <path d="M12 2.5v4M12 17.5v4M2.5 12h4M17.5 12h4"/>
+              </svg>
+            </span>
+            <span class="card__cat">Intermedio</span>
+          </div>
+          <h3 class="card__title">Hack The Box</h3>
+          <p class="card__desc">Máquinas y retos siempre activos, desde Starting Point hasta máquinas
+            de corte OSCP. El estándar de la práctica.</p>
+          <ul class="card__tags">
+            <li>Máquinas</li>
+            <li>Retos</li>
+            <li>Laboratorios</li>
+          </ul>
+          <a class="card__link" href="https://www.hackthebox.com" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 12 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 4.5 3.5 6.8v13L9 17.2l6 2.3 5.5-2.3v-13L15 6.8 9 4.5Z"/>
+                <path d="M9 4.5v12.7M15 6.8v12.7"/>
+              </svg>
+            </span>
+            <span class="card__cat">Iniciación</span>
+          </div>
+          <h3 class="card__title">TryHackMe</h3>
+          <p class="card__desc">Rutas guiadas paso a paso con navegador en la nube: la puerta de entrada
+            más cómoda para empezar sin montar nada.</p>
+          <ul class="card__tags">
+            <li>Guiado</li>
+            <li>Navegador</li>
+            <li>Nivel inicial</li>
+          </ul>
+          <a class="card__link" href="https://tryhackme.com" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 13 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4.5" width="18" height="15" rx="2"/>
+                <path d="M3 9h18M6.6 6.7h.01M9.4 6.7h.01"/>
+              </svg>
+            </span>
+            <span class="card__cat">Iniciación</span>
+          </div>
+          <h3 class="card__title">PortSwigger Web Security Academy</h3>
+          <p class="card__desc">Los laboratorios gratuitos del creador de Burp Suite: la mejor escuela
+            de seguridad web que existe.</p>
+          <ul class="card__tags">
+            <li>Web</li>
+            <li>Burp Suite</li>
+            <li>Gratis</li>
+          </ul>
+          <a class="card__link" href="https://portswigger.net/web-security" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 14 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4.5" width="18" height="15" rx="2"/>
+                <path d="m7 10 2.5 2.2L7 14.4M12.5 15h4.5"/>
+              </svg>
+            </span>
+            <span class="card__cat">Iniciación</span>
+          </div>
+          <h3 class="card__title">OverTheWire · Bandit</h3>
+          <p class="card__desc">Aprende Linux y SSH resolviendo niveles, como un juego: directo desde el
+            navegador, sin instalar nada.</p>
+          <ul class="card__tags">
+            <li>Linux</li>
+            <li>SSH</li>
+            <li>Wargame</li>
+          </ul>
+          <a class="card__link" href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 15 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5.5 21V4.2"/>
+                <path d="M5.5 5.2h11l-1.8 3.4 1.8 3.4h-11"/>
+              </svg>
+            </span>
+            <span class="card__cat">Iniciación</span>
+          </div>
+          <h3 class="card__title">picoCTF</h3>
+          <p class="card__desc">CTF diseñado para estudiantes de secundaria y universidad: retos suaves
+            que enganchan y enseñan bases sólidas.</p>
+          <ul class="card__tags">
+            <li>CTF</li>
+            <li>Estudiantes</li>
+          </ul>
+          <a class="card__link" href="https://picoctf.org" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 16 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="8.5" cy="15.5" r="3.5"/>
+                <path d="m11 13 8-8M16.5 7.5l2 2M14.5 9.5l2 2"/>
+              </svg>
+            </span>
+            <span class="card__cat">Iniciación</span>
+          </div>
+          <h3 class="card__title">Root-Me</h3>
+          <p class="card__desc">Retos de web, criptografía, forense y reverse engineering con comunidad
+            y soluciones comentadas al terminar.</p>
+          <ul class="card__tags">
+            <li>Web</li>
+            <li>Cripto</li>
+            <li>Forense</li>
+          </ul>
+          <a class="card__link" href="https://www.root-me.org" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 17 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3.2 5 5.8v5.4c0 4.3 2.9 7.6 7 9.6 4.1-2 7-5.3 7-9.6V5.8L12 3.2Z"/>
+                <path d="M9.5 12.4h5M12 9.8v5.2"/>
+              </svg>
+            </span>
+            <span class="card__cat">Intermedio</span>
+          </div>
+          <h3 class="card__title">CyberDefenders</h3>
+          <p class="card__desc">Escenarios azules para practicar análisis de amenazas: triaje de alertas,
+            caza y respaldo forense.</p>
+          <ul class="card__tags">
+            <li>Blue Team</li>
+            <li>SIEM</li>
+            <li>Análisis</li>
+          </ul>
+          <a class="card__link" href="https://cyberdefenders.org" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 18 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9.5 4 8 20M16 4l-1.5 16M4.5 9h15M4 15h15"/>
+              </svg>
+            </span>
+            <span class="card__cat">Intermedio</span>
+          </div>
+          <h3 class="card__title">CryptoHack</h3>
+          <p class="card__desc">Retos de criptografía aplicada: RSA, curvas elípticas y ataques
+            clásicos, con la teoría justo cuando la necesitas.</p>
+          <ul class="card__tags">
+            <li>Criptografía</li>
+            <li>RSA</li>
+            <li>CTF</li>
+          </ul>
+          <a class="card__link" href="https://cryptohack.org" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 19 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3.5v10M8.5 10.2 12 13.7l3.5-3.5"/>
+                <path d="M4.5 15.5v3a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-3"/>
+              </svg>
+            </span>
+            <span class="card__cat">Iniciación</span>
+          </div>
+          <h3 class="card__title">VulnHub</h3>
+          <p class="card__desc">Máquinas virtuales descargables para practicar sin conexión, con guías
+            de la comunidad para cuando te atascas.</p>
+          <ul class="card__tags">
+            <li>Máquinas</li>
+            <li>Offline</li>
+          </ul>
+          <a class="card__link" href="https://vulnhub.com" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 20 -->
+        <article class="card" data-type="practica">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="5" width="17" height="15" rx="2"/>
+                <path d="M8 3v4M16 3v4M3.5 10h17"/>
+              </svg>
+            </span>
+            <span class="card__cat">Todos los niveles</span>
+          </div>
+          <h3 class="card__title">CTFtime</h3>
+          <p class="card__desc">El calendario mundial de CTF: encuentra competiciones abiertas y equipos
+            con los que jugar en directo.</p>
+          <ul class="card__tags">
+            <li>Eventos</li>
+            <li>Calendario</li>
+            <li>Equipos</li>
+          </ul>
+          <a class="card__link" href="https://ctftime.org" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Sección · Revistas y fanzines -->
+    <section class="container card-section" aria-labelledby="revistas-title">
+      <h2 class="section-title" id="revistas-title">Revistas y fanzines
+        <span class="section-title__count">6 publicaciones</span>
+      </h2>
+
+      <div class="grid">
+
+        <!-- 21 -->
+        <article class="card" data-type="revista">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="5" width="13" height="14" rx="2"/>
+                <path d="M16.5 9.5h2.5a1.5 1.5 0 0 1 1.5 1.5v6.5a1.5 1.5 0 0 1-1.5 1.5H16.5"/>
+                <path d="M6.5 8.5h7M6.5 12h7M6.5 15.5h4"/>
+              </svg>
+            </span>
+            <span class="card__cat">E-zine · EN</span>
+          </div>
+          <h3 class="card__title">Phrack</h3>
+          <p class="card__desc">El fanzine mítico de la escena, en texto puro desde 1985: artículos de
+            técnicas de ataque escritos por hackers, gratuitos y sin florituras.</p>
+          <ul class="card__tags">
+            <li>Desde 1985</li>
+            <li>Gratuito</li>
+            <li>Texto puro</li>
+          </ul>
+          <a class="card__link" href="https://phrack.org" target="_blank" rel="noopener noreferrer">
+            Leer <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 22 -->
+        <article class="card" data-type="revista">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="5" width="13" height="14" rx="2"/>
+                <path d="M16.5 9.5h2.5a1.5 1.5 0 0 1 1.5 1.5v6.5a1.5 1.5 0 0 1-1.5 1.5H16.5"/>
+                <path d="M6.5 8.5h7M6.5 12h7M6.5 15.5h4"/>
+              </svg>
+            </span>
+            <span class="card__cat">Impresa · EN</span>
+          </div>
+          <h3 class="card__title">2600: The Hacker Quarterly</h3>
+          <p class="card__desc">La revista impresa de hacking más veterana: trimestral desde 1984, con
+            entrevistas, secciones de lectores y cultura hacker en papel.</p>
+          <ul class="card__tags">
+            <li>Trimestral</li>
+            <li>Desde 1984</li>
+            <li>Papel</li>
+          </ul>
+          <a class="card__link" href="https://www.2600.com" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 23 -->
+        <article class="card" data-type="revista">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="5" width="13" height="14" rx="2"/>
+                <path d="M16.5 9.5h2.5a1.5 1.5 0 0 1 1.5 1.5v6.5a1.5 1.5 0 0 1-1.5 1.5H16.5"/>
+                <path d="M6.5 8.5h7M6.5 12h7M6.5 15.5h4"/>
+              </svg>
+            </span>
+            <span class="card__cat">Impresa · ES</span>
+          </div>
+          <h3 class="card__title">Revista SIC</h3>
+          <p class="card__desc">Revista española de ciberseguridad y seguridad de la información, con
+            monográficos y artículos de profesionales del sector.</p>
+          <ul class="card__tags">
+            <li>Español</li>
+            <li>Papel</li>
+            <li>Sector</li>
+          </ul>
+          <a class="card__link" href="https://revistasic.es" target="_blank" rel="noopener noreferrer">
+            Visitar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 24 -->
+        <article class="card" data-type="revista">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="5" width="13" height="14" rx="2"/>
+                <path d="M16.5 9.5h2.5a1.5 1.5 0 0 1 1.5 1.5v6.5a1.5 1.5 0 0 1-1.5 1.5H16.5"/>
+                <path d="M6.5 8.5h7M6.5 12h7M6.5 15.5h4"/>
+              </svg>
+            </span>
+            <span class="card__cat">Impresa + digital · EN</span>
+          </div>
+          <h3 class="card__title">USENIX ;login:</h3>
+          <p class="card__desc">La publicación de USENIX con artículos prácticos de administración de
+            sistemas y seguridad escritos por quien opera la infraestructura.</p>
+          <ul class="card__tags">
+            <li>Sistemas</li>
+            <li>Práctica</li>
+            <li>USENIX</li>
+          </ul>
+          <a class="card__link" href="https://www.usenix.org/publications/login" target="_blank" rel="noopener noreferrer">
+            Leer <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 25 -->
+        <article class="card" data-type="revista">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="5" width="13" height="14" rx="2"/>
+                <path d="M16.5 9.5h2.5a1.5 1.5 0 0 1 1.5 1.5v6.5a1.5 1.5 0 0 1-1.5 1.5H16.5"/>
+                <path d="M6.5 8.5h7M6.5 12h7M6.5 15.5h4"/>
+              </svg>
+            </span>
+            <span class="card__cat">Impresa · EN</span>
+          </div>
+          <h3 class="card__title">City Security</h3>
+          <p class="card__desc">Revista británica de seguridad que llega en papel de forma gratuita, con
+            casos reales, gestión del riesgo y protección de instalaciones.</p>
+          <ul class="card__tags">
+            <li>Gratuita</li>
+            <li>Papel</li>
+            <li>Reino Unido</li>
+          </ul>
+          <a class="card__link" href="https://citysecuritymagazine.com/" target="_blank" rel="noopener noreferrer">
+            Pedir ejemplar <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <!-- 26 -->
+        <article class="card" data-type="revista">
+          <div class="card__top">
+            <span class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="5" width="13" height="14" rx="2"/>
+                <path d="M16.5 9.5h2.5a1.5 1.5 0 0 1 1.5 1.5v6.5a1.5 1.5 0 0 1-1.5 1.5H16.5"/>
+                <path d="M6.5 8.5h7M6.5 12h7M6.5 15.5h4"/>
+              </svg>
+            </span>
+            <span class="card__cat">Fanzine · EN</span>
+          </div>
+          <h3 class="card__title">PoC||GTFO</h3>
+          <p class="card__desc">El fanzine de ingeniería inversa y exploits con estética de Biblia;
+            todos los números digitalizados en Internet Archive.</p>
+          <ul class="card__tags">
+            <li>Exploits</li>
+            <li>Reversing</li>
+            <li>Gratuito</li>
+          </ul>
+          <a class="card__link" href="https://archive.org/details/pocorgtfo" target="_blank" rel="noopener noreferrer">
+            Leer <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="container">
+      <p class="empty" id="empty" hidden>No se encontraron recursos con esos criterios. Prueba con
+        otra búsqueda o cambia de tipo.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Hecho con HTML, CSS y JavaScript vanilla · Enlaces verificados uno a uno.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
